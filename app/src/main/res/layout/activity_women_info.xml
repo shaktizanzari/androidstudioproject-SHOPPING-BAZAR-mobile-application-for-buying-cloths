@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".WomenInfoActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="62dp"
         android:background="@color/design_default_color_primary"
-        android:text="SHOPPING BAZAR"
+        android:text="FOOD CHAIN"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="30dp" />
 
@@ -25,7 +23,6 @@
         android:elevation="4dp"
         android:layout_toRightOf="@+id/textView"
         >
-
         <ImageView
             android:id="@+id/ic_cart"
             android:layout_width="116dp"
@@ -34,38 +31,36 @@
             android:layout_marginStart="16dp"
             android:onClick="onCartIconClick"
             android:src="@drawable/ic_cart"
-            android:layout_marginLeft="0dp"
-            />
+            android:layout_marginLeft="0dp"/>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:id="@+id/welcome"
-        android:layout_width="match_parent"
-        android:layout_height="327dp"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="-50dp"
-        android:src="@drawable/welcomeimage"
-
-        />
-
     <TextView
-        android:id="@+id/para1"
+        android:id="@+id/order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/welcome"
-        android:padding="16dp"
-        android:text="Discover the latest in fashion and style at your fingertips.
-                      We're thrilled to have you here, where trends meet comfort and elegance meets affordability.!"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="24sp" />
+        android:layout_below="@+id/textView"
+        android:layout_margin="5dp"
+        android:text="Women Sarees "
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/peppy"
+        android:layout_width="match_parent"
+        android:layout_height="239dp"
+        android:layout_below="@+id/order"
+        android:src="@drawable/ic_greensaree"
+        android:longClickable="true"
+        android:contextClickable="true"/>
 
     <TextView
+        android:id="@+id/desc1"
         android:layout_width="match_parent"
-        android:layout_height="207dp"
-        android:layout_below="@+id/para1"
-        android:layout_marginTop="2dp"
-        android:text="At Shopping Bazar, we believe that your wardrobe should be as unique as you are. That's why we curate a collection of fashion-forward pieces that cater to every taste and occasion."
-        android:textSize="24sp" />
-
+        android:layout_height="wrap_content"
+        android:text="Silk Green Saree in Embroidered,lace - SR23275.
+Rs. 5000"
+        android:layout_below="@+id/peppy"
+        android:textSize="20dp"
+        />
 </RelativeLayout>

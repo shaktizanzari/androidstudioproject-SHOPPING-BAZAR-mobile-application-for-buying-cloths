@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartActivity">
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E6AE20"
+        android:text="CART"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/cartItemsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cart Items"
+        android:textSize="30sp"
+        android:padding="16dp"
+        android:layout_below="@+id/header"/>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cartItemsTextView"
+        android:layout_marginTop="190dp"
+        android:text="total="
+        android:textSize="40dp" />
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/total">
+    <RadioButton
+        android:id="@+id/checkboxCheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/total"
+        android:layout_marginTop="16dp"
+        android:text="Size XS" />
+
+    <RadioButton
+        android:id="@+id/checkboxCorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small"
+        android:layout_below="@+id/checkboxCheese"
+        android:layout_marginTop="8dp"/>
+
+    <RadioButton
+        android:id="@+id/checkboxOrigano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large"
+        android:layout_below="@+id/checkboxCorn"
+        android:layout_marginTop="8dp"/>
+
+    <RadioButton
+        android:id="@+id/checkboxChillyFlakes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extrs Large"
+        android:layout_below="@+id/checkboxOrigano"
+        android:layout_marginTop="8dp"/>
+
+</RadioGroup>
+    <!--    <Spinner-->
+    <!--        android:id="@+id/customizeOptionsSpinner"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/total"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:entries="@array/customize_options" />-->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Place Order"
+        android:textSize="30dp"
+        android:id="@+id/placeorder"
+        />
+
+</RelativeLayout>

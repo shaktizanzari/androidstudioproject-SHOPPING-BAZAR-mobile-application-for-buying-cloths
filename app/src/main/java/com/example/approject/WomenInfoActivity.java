@@ -2,27 +2,31 @@ package com.example.approject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.annotation.SuppressLint;
-import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.content.Intent;
-public class MainActivity extends AppCompatActivity {
+import android.os.Bundle;
+import android.os.Bundle;
+
+public class WomenInfoActivity extends AppCompatActivity {
     Toolbar t;
+    ImageView i1;
     ImageView i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_women_info);
+
 
         t = findViewById(R.id.toolbar);
         setSupportActionBar(t);
@@ -32,11 +36,37 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                Intent intent = new Intent(WomenInfoActivity.this, CartActivity.class);
                 startActivity(intent);
-                Toast.makeText(MainActivity.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WomenInfoActivity.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
             }
         });
+
+        i1=findViewById(R.id.peppy);
+        i1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu p=new PopupMenu(WomenInfoActivity.this, i1);
+                p.getMenuInflater().inflate(R.menu.menu,p.getMenu());
+                p.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getTitle().toString()){
+                            case "add to cart":Toast.makeText(WomenInfoActivity.this, "added to cart",Toast.LENGTH_SHORT).show();
+                                Cart cart=Cart.getInstance();
+                                cart.addItem("silk green saree", 5000);
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+                p.show();
+            }
+        });
+
+
+
     }
 
     private void create_menu(Menu menu){
@@ -60,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case 22:Toast.makeText(this,"Salwar suits is selected",Toast.LENGTH_SHORT).show();
-            WomenSuitActivity();
+                WomenSuitActivity();
                 return true;
 
             default:
@@ -85,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this, WomenInfoActivity.class);
         startActivity(intent);
     }
+
     private void WomenSuitActivity(){
         Intent intent=new Intent(this, WomenSuitActivity.class);
         startActivity(intent);

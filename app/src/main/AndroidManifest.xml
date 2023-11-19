@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APProject"
         tools:targetApi="31">
+        <activity
+            android:name=".WomenSuitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WomenInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenInfoActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

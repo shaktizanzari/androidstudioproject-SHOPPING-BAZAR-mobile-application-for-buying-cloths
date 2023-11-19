@@ -1,7 +1,6 @@
 package com.example.approject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -10,19 +9,23 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.content.Intent;
-public class MainActivity extends AppCompatActivity {
+import android.os.Bundle;
+
+public class MenInfoActivity extends AppCompatActivity {
     Toolbar t;
+    ImageButton i1, i2;
     ImageView i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_men_info);
 
         t = findViewById(R.id.toolbar);
         setSupportActionBar(t);
@@ -32,9 +35,55 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                Intent intent = new Intent(MenInfoActivity.this, CartActivity.class);
                 startActivity(intent);
-                Toast.makeText(MainActivity.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MenInfoActivity.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        i1=findViewById(R.id.pasta1);
+        i1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu p=new PopupMenu(MenInfoActivity.this, i1);
+                p.getMenuInflater().inflate(R.menu.menu,p.getMenu());
+                p.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getTitle().toString()){
+                            case "add to cart":Toast.makeText(MenInfoActivity.this, "added to cart",Toast.LENGTH_SHORT).show();
+                                Cart cart=Cart.getInstance();
+                                cart.addItem("blue georgette kurta", 400);
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+                p.show();
+            }
+        });
+
+        i2=findViewById(R.id.pasta2);
+        i2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu p=new PopupMenu(MenInfoActivity.this, i2);
+                p.getMenuInflater().inflate(R.menu.menu,p.getMenu());
+                p.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getTitle().toString()){
+                            case "add to cart":Toast.makeText(MenInfoActivity.this, "added to cart",Toast.LENGTH_SHORT).show();
+                                Cart cart=Cart.getInstance();
+                                cart.addItem("maroon manyawar", 1000);
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+                p.show();
             }
         });
     }
