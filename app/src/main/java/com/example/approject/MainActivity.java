@@ -2,19 +2,14 @@ package com.example.approject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
-import android.os.Bundle;
+
 import android.content.Intent;
 public class MainActivity extends AppCompatActivity {
     Toolbar t;
@@ -32,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                Intent intent = new Intent(Register.this, CartActivity.class);
                 startActivity(intent);
-                Toast.makeText(MainActivity.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Register.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }

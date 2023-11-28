@@ -40,7 +40,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
-        android:layout_margin="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:text="Women Sarees "
         android:textColor="@color/design_default_color_primary"
         android:textSize="30dp" />
@@ -61,6 +64,25 @@
         android:text="Silk Green Saree in Embroidered,lace - SR23275.
 Rs. 5000"
         android:layout_below="@+id/peppy"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/peppy2"
+        android:layout_width="match_parent"
+        android:layout_height="239dp"
+        android:layout_below="@+id/desc1"
+        android:src="@drawable/ic_aquasaree"
+        android:longClickable="true"
+        android:contextClickable="true"/>
+
+    <TextView
+        android:id="@+id/desc2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aqua rich Silk Saree -G3
+Rs. 9000"
+        android:layout_below="@+id/peppy2"
         android:textSize="20dp"
         />
 </RelativeLayout>
