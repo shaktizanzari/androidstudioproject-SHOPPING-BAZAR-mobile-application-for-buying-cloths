@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< Original<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools">
 
 <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -34,9 +33,9 @@ xmlns:tools="http://schemas.android.com/tools">
         android:name=".Register"
         android:exported="true"
         tools:ignore="DuplicateActivity">
-    <activity
-        android:name=".LastpageActivity"
-        android:exported="false"/>
+        <activity
+            android:name=".LastpageActivity"
+            android:exported="false" />
 
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -47,3 +46,15 @@ xmlns:tools="http://schemas.android.com/tools">
 </application>
 
 </manifest>
+
+    =======
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<application>
+    <activity
+        android:name="com.example.approject.PaymentpageActivity"
+        android:exported="false"
+
+        />
+</application>
+</manifest>>>>>>>> Added
