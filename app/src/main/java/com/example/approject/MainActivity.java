@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Register.this, CartActivity.class);
+                Intent intent = new Intent(MainActivity.this, CartActivity.class);
                 startActivity(intent);
-                Toast.makeText(Register.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Cart icon clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }
